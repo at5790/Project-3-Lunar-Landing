@@ -10,6 +10,9 @@
 * Academic Misconduct.
 **/
 
+// "Include at least one moving platform that the player can interact with to either win or lose."
+// I wanted to use the lerp logic we learned from class so created an npc that fails you if it is able to touch you
+
 struct GameState
 {
     Entity *bee;
@@ -301,6 +304,7 @@ void update()
             gState.dirts[i].update(FIXED_TIMESTEP, nullptr, nullptr, 0,
                 nullptr, 0);
 
+        //used chat to figure out why couldnt see clouds, forgot to change this to *2 
         for (int i = 0; i <( NUMBER_OF_clouds * 2 ); i++)
             gState.clouds[i].update(FIXED_TIMESTEP, nullptr, nullptr, 0,
                 nullptr, 0);
@@ -470,7 +474,7 @@ void render()
     gState.sun->render();
 
     for (int i = 0; i < NUMBER_OF_dirts;  i++) gState.dirts[i].render();
-    for (int i = 0; i < (NUMBER_OF_clouds*2);  i++) gState.clouds[i].render();
+    for (int i = 0; i < (NUMBER_OF_clouds*2);  i++) gState.clouds[i].render(); // fixed here too 
     for (int i = 0; i < NUMBER_OF_flower; i++) gState.flower[i].render();
 
     //"Include a UI element that displays the remaining fuel."
