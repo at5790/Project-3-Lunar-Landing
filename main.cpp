@@ -57,6 +57,8 @@ float gPreviousTicks   = 0.0f,
  float fuelAmnt = 100.0f; // fuel
 float fuelExpense = 0.05f; // when pressing keys subtract this value
 
+
+
 GameState gState;
 
 int won = -1; // from Pong project depending on winner value, decides who gets shown but here winning (1), losing screen (0) or neither (-1)
